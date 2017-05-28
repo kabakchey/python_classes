@@ -7,7 +7,7 @@ import time
 #
 def get_location_coordinates(client, address=None):
     response = client.geocode(address)
-    ##pprint.pprint(response)
+    #pprint.pprint(response)
     return response[0]['geometry']['location']
 
 #------------------------------------------------------------------------------
@@ -54,17 +54,21 @@ def google_maps():
     # https://console.developers.google.com/apis/library
     # https://console.developers.google.com/cloud-resource-manager
     # https://developers.google.com/places/web-service/get-api-key
+    # https://developers.google.com/products/
 
     api_key = 'AIzaSyDu-cscl23SX3uxUbid5WyPFI1aDTaq-u0'
     client = googlemaps.Client(key=api_key)
 
     # current_location = {'lat': 46.60042199999999,
     #                     'lng': 30.8118901}
-    current_location = get_location_coordinates(client, "Odesa")
+    current_location = get_location_coordinates(client, "Amsterdam")
 
     # https://developers.google.com/places/supported_types
-    get_places_nearby(client, current_location, 2000, 'gym|post office')
+    get_places_nearby(client, current_location, 100, 'food')
+    get_places_nearby(client, current_location, 100, 'gym')
+    get_places_nearby(client, current_location, 100, 'post_office')
 
+    get_places_nearby(client, current_location, 100, 'food|gym|post_office')
 
 ###############################################################################
 #

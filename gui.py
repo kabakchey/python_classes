@@ -37,8 +37,8 @@ def turtle_demo():
     import turtle
 
     spiral = turtle.Turtle()
-    spiral.speed(20)
-    spiral.color("#ff0000")
+    spiral.speed(100)
+    spiral.color("#00ff00")
 
     for i in range(400):
         spiral.forward(i * 5)
@@ -73,6 +73,6 @@ def turtle_demo_2():
 #-------------------------------------------------------------
 if __name__ == "__main__":
 
-    #simple_box()
-    # turtle_demo()
-    turtle_demo_2()
+    simple_window()
+    #turtle_demo()
+    #turtle_demo_2()

@@ -6,7 +6,7 @@ import os
 def get_data_from_csv(filename):
     import csv
 
-    f = open(filename, "r")
+    f = open(filename, "r", encoding="utf8")
 
     dict_reader = csv.DictReader(f)
     list_dicts = []
@@ -59,13 +59,14 @@ def save_age_distribution(deputies, filename):
 
 if __name__ == "__main__":
 
-    if len(sys.argv) >= 3:
+    if len(sys.argv) == 3:
         file_in = sys.argv[1]
         file_out = sys.argv[2]
     else:
-        print("Invalid usage: missing files")
+        print("Invalid usage")
         print("Usage: %s <file_in> <file_out>" % os.path.basename(sys.argv[0]))
         sys.exit(-1)
 
     deputies = get_data_from_csv(file_in)
+    # print_gender_distribution(deputies)
     save_age_distribution(deputies, file_out)
