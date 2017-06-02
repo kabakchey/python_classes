@@ -15,7 +15,6 @@ class SaleInvoice(object):
             self.price = price
             self.sum = self.qty * self.price
 
-
     # ---------------------------------------------------------------
     def __init__(self, store):
 
@@ -63,8 +62,8 @@ class SaleInvoice(object):
         pass
 
     # ---------------------------------------------------------------
-    def records(self):
-        return self.__records.values()
+    def __iter__(self):
+        return iter(self.__records.values())
 
     # ---------------------------------------------------------------
     def __str__(self):

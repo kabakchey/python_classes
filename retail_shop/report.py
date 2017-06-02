@@ -1,7 +1,6 @@
 from invoice_journal import InvoiceJournal
 from sale_invoice import SaleInvoice
 
-
 class Report(object):
 
     #----------------------------------------------------------------
@@ -14,11 +13,11 @@ class Report(object):
 
         items_profit = {}
         for invoice in self.journal.get_invoices(date1, date2):
-            for record in invoice.records():
+            for record in invoice:
                 profit = record.qty*(record.item.sale_price-record.item.purchase_price)
                 items_profit[record.item] = items_profit.get(record.item, 0) + profit
 
-        #TODO: fance print
+        #TODO: fancy print
         print("\nProfit by item:")
         for item in sorted(items_profit, key=items_profit.get):
             print ("\t%s: %d" % (item.name, items_profit[item]))

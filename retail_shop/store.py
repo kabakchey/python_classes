@@ -7,11 +7,6 @@ class Store(object):
     # ---------------------------------------------------------------
     def add_item(self, item, qty):
         self.__items_balance[item] = self.__items_balance.get(item, 0) + qty
-        #
-        # if item in self.__items_balance:
-        #     self.__items_balance[item] = self.__items_balance[item] + qty
-        # else:
-        #     self.__items_balance[item] = 0                          + qty
 
     # ---------------------------------------------------------------
     def withdraw_item(self, item, qty):
