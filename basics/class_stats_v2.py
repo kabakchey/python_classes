@@ -1,4 +1,3 @@
-
 import requests
 import json
 from pprint import pprint
@@ -41,6 +40,7 @@ def get_student(id):
 
     return result
 
+
 #------------------------------------------------------------------------------
 def update_student(id, upd_fields):
     response = requests.put(URL + '/students/' + str(id),
@@ -52,6 +52,7 @@ def update_student(id, upd_fields):
         log_error(response.content)
 
     return result
+
 
 #------------------------------------------------------------------------------
 def add_student(student):
@@ -65,6 +66,7 @@ def add_student(student):
 
     return result
 
+
 #------------------------------------------------------------------------------
 def reset():
     response = requests.put(URL + '/reset')
@@ -75,6 +77,7 @@ def reset():
         log_error(response.content)
 
     return result
+
 
 #------------------------------------------------------------------------------
 def demo():
@@ -105,6 +108,7 @@ def demo():
     reset()
     pprint(get_students())
 
+    
 #------------------------------------------------------------------------------
 def update_students_results():
     '''
