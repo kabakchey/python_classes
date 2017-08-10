@@ -67,7 +67,7 @@ def add_student(student):
 
 #------------------------------------------------------------------------------
 def reset():
-    response = requests.put(URL + '/reset/')
+    response = requests.put(URL + '/reset')
 
     result = response.status_code == 200
 
@@ -94,8 +94,8 @@ def demo():
     # http://54.201.47.219:8080/api/v1/test1_weights/
 
     pprint(get_students())
+    
     pprint(get_student(1024))
-
     update_student(1024, {'rank': 42})
     pprint(get_student(1024))
 
@@ -103,6 +103,7 @@ def demo():
     pprint(get_student(1234))
 
     reset()
+    pprint(get_students())
 
 #------------------------------------------------------------------------------
 def update_students_results():
@@ -142,7 +143,8 @@ def print_students_info(sort_by_key="fullname"):
 
 #------------------------------------------------------------------------------
 if __name__ == "__main__":
-    #demo()
+    demo()
 
-    update_students_results()
-    print_students_info()
+    # update_students_results()
+    # print_students_info()
+
