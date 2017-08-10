@@ -58,15 +58,13 @@ def read_line_by_line(filename):
 def get_data_from_csv(filename):
     import csv
 
-    f = open(filename, "r")
+    with open(filename, "r", encoding='utf8') as f:
+        dict_reader = csv.DictReader(f)
+        list_dicts = []
 
-    dict_reader = csv.DictReader(f)
-    list_dicts = []
+        for row in dict_reader:
+            list_dicts.append(row)
 
-    for row in dict_reader:
-        list_dicts.append(row)
-
-    f.close()
     return list_dicts
 
 
@@ -132,15 +130,17 @@ def traverse_dir(dir, indent_level=0):
 
     for name in os.listdir(dir):
         if not name.startswith("."):
-            path = os.path.join(dir, name)
-            prefix = indent_level*(" "*4)
-            if os.path.isfile(path):
-                print("%s (%d bytes)" % (prefix + "╰─── " + name,
-                                         os.path.getsize(path)))
-            else:
-                print(prefix + name + ":")
-                traverse_dir(path, indent_level+1)
-                
+            try:
+                path = os.path.join(dir, name)
+                prefix = indent_level*(" "*4)
+                if os.path.isfile(path):
+                    print("%s (%d bytes)" % (prefix + "╰─── " + name,
+                                             os.path.getsize(path)))
+                else:
+                    print(prefix + name + ":")
+                    traverse_dir(path, indent_level+1)
+            except Exception as ex:
+                print(ex)
                 
 ######################################################
 print_top_n_words("/home/db/Downloads/22907_clarke-arthur_rama-revealed.txt", 20)
