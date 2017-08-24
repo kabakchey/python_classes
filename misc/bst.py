@@ -71,7 +71,7 @@ class BinarySearchTree:
         return status
 
     def __str__(self):
-        return "BST (root=%s) -> %s" % (self.root, list(self))
+        return "BST (root=%s)" % self.root
 
 
 ########################################################
