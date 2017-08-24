@@ -27,7 +27,6 @@ class BinarySearchTree:
     def __iter__(self):
         pass
 
-
     def add(self, value):
         if value is None:
             raise ValueError("Invalid value: 'None' violates BST invariant")
@@ -45,10 +44,12 @@ class BinarySearchTree:
             node.right = BinarySearchTree.BSTNode(value)
 
     def remove(self, value):
+        # TBD
         pass
 
     # good BST should be balanced to guarantee log(N) time complexity: http://bit.ly/1V5RqKL
     def balance(self, value):
+        # TBD
         pass
 
     def find(self, value):
@@ -70,7 +71,7 @@ class BinarySearchTree:
         return status
 
     def __str__(self):
-        return "BST: root=%s" % self.root
+        return "BST (root=%s) -> %s" % (self.root, list(self))
 
 
 ########################################################
