@@ -1,51 +1,58 @@
 group = [
-    {"id": 1024, "fullname": "Александр Скворцов",    "email": "", "github": "https://github.com/Agskvortsov", "rank": 0},
-    {"id": 1025, "fullname": "Андрей Рожко",          "email": "", "github": "https://github.com/rozhkoandrew", "rank": 0},
-    {"id": 1026, "fullname": "Кулишенко Алексей",     "email": "", "github": "https://github.com/", "rank": 0},
-    {"id": 1027, "fullname": "Виталий Рыжков",        "email": "", "github": "https://github.com/vitalyryzhkov", "rank": 0},
-    {"id": 1028, "fullname": "Гавеля Виталина",       "email": "", "github": "https://github.com/", "rank": 0},
-    {"id": 1029, "fullname": "Виктор Бурлаков",       "email": "", "github": "https://github.com/SancheeZzz", "rank": 0},
-    {"id": 1030, "fullname": "Виктор Горовой",        "email": "", "github": "https://github.com/lamboosanproject", "rank": 0},
-    {"id": 1031, "fullname": "Надежда Симанович",     "email": "", "github": "https://github.com/simanadya", "rank": 0},
-    {"id": 1032, "fullname": "Николай Марушевский",   "email": "", "github": "https://github.com/Gelios-Sky", "rank": 0},
-    {"id": 1033, "fullname": "Андрей Кравчук",        "email": "", "github": "https://github.com/albaderon", "rank": 0},
-    {"id": 1034, "fullname": "Шадрина Екатерина",     "email": "", "github": "https://github.com/katefeline", "rank": 0},
-    {"id": 1035, "fullname": "Александр Малышев",     "email": "", "github": "https://github.com/Barabasha", "rank": 0},
-    {"id": 1036, "fullname": "Владимир Веренчук",     "email": "", "github": "https://github.com/", "rank": 0}
+    {"id": 1024, "fullname": "Тимченко Дмитрий",    "email": "dmt.tym@gmail.com", "github": "https://github.com/TymDmitriy", "rank": 0},
+    {"id": 1025, "fullname": "Юношев Павел",        "email": "p.n.yunoshev@gmail.com", "github": "", "rank": 0},
+    {"id": 1026, "fullname": "Лукшин Евгений",      "email": "otis01990@gmail.com", "github": "https://github.com/EugeneSchweiger", "rank": 0},
+    {"id": 1027, "fullname": "Сеченова Анна",       "email": "sechenovaanna@gmail.com", "github": "https://github.com/AnnaSechenova", "rank": 0},
+    {"id": 1028, "fullname": "Квято Сергей",        "email": "skvantos@gmail.com", "github": "https://github.com/kvantos/", "rank": 0},
+    {"id": 1029, "fullname": "Кань Евгений",        "email": "suckrat.us1337@gmail.com", "github": "https://github.com/suckratus", "rank": 0},
+    {"id": 1030, "fullname": "Лавренко Евгений",    "email": "superlavrik@gmail.com", "github": "https://github.com/SuperLavrik", "rank": 0},
+    {"id": 1031, "fullname": "Кирсанов Илья",       "email": "ilya.kirsanov@gmail.com", "github": "https://github.com/IlyaKirsanov", "rank": 0},
+    {"id": 1032, "fullname": "Жолондковский Вадим", "email": "vadymzholondkovskiy@gmail.com", "github": "", "rank": 0},
+    {"id": 1033, "fullname": "Марченко Вадим",      "email": "wardomir@gmail.com", "github": "", "rank": 0},
+    {"id": 1034, "fullname": "Митев Алексей",       "email": "oleksii.mitiev@gmail.com", "github": "https://github.com/omitiev", "rank": 0},
+    {"id": 1035, "fullname": "Якутко Анастасия",    "email": "anastasiia.yakutko@gmail.com", "github": "https://github.com/ayakutko/HW_1_6", "rank": 0},
+    {"id": 1036, "fullname": "Каменцев Никита",     "email": "niqkamentsev@gmail.com", "github": "https://github.com/TheNiq", "rank": 0},
+    {"id": 1037, "fullname": "Белоус Екатерина",    "email": "katherinebilous@gmail.com", "github": "https://github.com/KateBilous/", "rank": 0},
+    {"id": 1038, "fullname": "Друмов Вадим",        "email": "vkdrumov@gmail.com", "github": "https://github.com/Vkdrumov", "rank": 0},
 ]
 
 hw_results = [
-    {"id": 1024, "task_completion": [1,1,1,1,1,1,1,0,1,0,1,0,0,1,0,1,1,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0] },
-    {"id": 1025, "task_completion": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0] },
-    {"id": 1026, "task_completion": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] },
-    {"id": 1027, "task_completion": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0] },
-    {"id": 1028, "task_completion": [1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] },
-    {"id": 1029, "task_completion": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0] },
-    {"id": 1030, "task_completion": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0] },
-    {"id": 1031, "task_completion": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] },
-    {"id": 1032, "task_completion": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] },
-    {"id": 1033, "task_completion": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0] },
-    {"id": 1034, "task_completion": [1,1,1,1,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] },
-    {"id": 1035, "task_completion": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0] },
-    {"id": 1036, "task_completion": [1,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] }
+    {"id":1024, "task_completion": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0]},
+    {"id":1025, "task_completion": [1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},
+    {"id":1026, "task_completion": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0]},
+    {"id":1027, "task_completion": [1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},
+    {"id":1028, "task_completion": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0]},
+    {"id":1029, "task_completion": [1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},
+    {"id":1030, "task_completion": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0]},
+    {"id":1031, "task_completion": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0]},
+    {"id":1032, "task_completion": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},
+    {"id":1033, "task_completion": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0]},
+    {"id":1034, "task_completion": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0]},
+    {"id":1035, "task_completion": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},
+    {"id":1036, "task_completion": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,0,0,0,0,0,0,0]},
+    {"id":1037, "task_completion": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},
+    {"id":1038, "task_completion": [1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},
 ]
 
 
 test1_results = [
-    {"id": 1024, "task_completion": [0,0,0,0,0,0,0,0,0,0,0,0] },
-    {"id": 1025, "task_completion": [1,1,1,1,1,1,1,1,1,0,0,1] },
-    {"id": 1026, "task_completion": [0,0,0,0,0,0,0,0,0,0,0,0] },
-    {"id": 1027, "task_completion": [1,1,1,1,1,1,1,1,0,0,0,0] },
-    {"id": 1028, "task_completion": [0,0,0,0,0,0,0,0,0,0,0,0] },
-    {"id": 1029, "task_completion": [1,1,1,1,1,0,0,0,0,0,0,0] },
-    {"id": 1030, "task_completion": [1,1,1,1,1,1,1,1,0,0,0,0] },
-    {"id": 1031, "task_completion": [1,1,1,1,0,0,0,0,0,0,0,0] },
+    {"id": 1024, "task_completion": [1,1,1,1,1,1,1,1,1,1,0,0] },
+    {"id": 1025, "task_completion": [0,0,0,0,0,0,0,0,0,0,0,0] },
+    {"id": 1026, "task_completion": [1,1,1,1,1,1,1,1,1,1,1,1] },
+    {"id": 1027, "task_completion": [0,0,0,0,0,0,0,0,0,0,0,0] },
+    {"id": 1028, "task_completion": [1,1,1,1,1,1,1,1,1,1,1,1] },
+    {"id": 1029, "task_completion": [0,0,0,0,0,0,0,0,0,0,0,0] },
+    {"id": 1030, "task_completion": [0,0,0,0,0,0,0,0,0,0,0,1] },
+    {"id": 1031, "task_completion": [1,1,1,1,1,1,0,0,0,0,0,0] },
     {"id": 1032, "task_completion": [0,0,0,0,0,0,0,0,0,0,0,0] },
-    {"id": 1033, "task_completion": [1,1,1,1,1,1,1,1,1,0,0,1] },
+    {"id": 1033, "task_completion": [1,1,1,1,1,1,1,1,1,1,1,0] },
     {"id": 1034, "task_completion": [0,0,0,0,0,0,0,0,0,0,0,0] },
-    {"id": 1035, "task_completion": [1,1,1,1,1,1,1,1,1,0,1,1] },
-    {"id": 1036, "task_completion": [0,0,0,0,0,0,0,0,0,0,0,0] }
+    {"id": 1035, "task_completion": [0,0,0,0,0,0,0,0,0,0,0,0] },
+    {"id": 1036, "task_completion": [0,0,0,0,0,0,0,0,0,0,0,0] },
+    {"id": 1037, "task_completion": [0,0,0,0,0,0,0,0,0,0,0,0] },
+    {"id": 1038, "task_completion": [0,0,0,0,0,0,0,0,0,0,0,0] },
 ]
+
 
 test1_weights = {
     1 : 1,
@@ -87,9 +94,9 @@ def print_students_info(group, sort_by_key="fullname"):
         -----------------------------------------
         : ID:                               1025:
         :.......................................:
-        : Full name:          Александр Скворцов:
-        : Email:           agskvortsov@gmail.com:
-        : Github:                    Agskvortsov:
+        : Full name:                Юношев Павел:
+        : Email:          p.n.yunoshev@gmail.com:
+        : Github:                               :
         : Rank:                               42:
         -----------------------------------------
     :return: None
