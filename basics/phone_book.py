@@ -16,6 +16,7 @@ def print_entry(number, entry):
     print ("| Surname: %20s |" % entry["surname"])
     print ("| Name:    %20s |" % entry["name"])
     print ("| Age:     %20s |" % entry["age"])
+    print ("| Phone:   %20s |" % entry["phone_number"])
     print ()
 
 
@@ -39,14 +40,16 @@ def print_phonebook_by_age():
 
 #------------------------------------------------------------------------------
 def add_entry_phonebook():
-    surname = str(input("    Enter surname: "))
-    name    = str(input("    Enter name: "))
+    surname = input("    Enter surname: ")
+    name    = input("    Enter name: ")
     age     = int(input("    Enter age: "))
+    phone_number   = input("    Enter phone num.: ")
 
     entry = {}
     entry["surname"] = surname
     entry["name"] = name
     entry["age"] = age
+    entry["phone_number"] = phone_number
     phone_book.append(entry)
 
 
