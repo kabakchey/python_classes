@@ -93,7 +93,7 @@ def count_all_entries_in_phonebook():
 
 
 #------------------------------------------------------------------------------
-def print_avr_age():
+def print_phonebook_by_age():
     pass
 
 
