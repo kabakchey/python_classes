@@ -34,11 +34,6 @@ def print_phonebook():
 
 
 #------------------------------------------------------------------------------
-def print_phonebook_by_age():
-    pass
-
-
-#------------------------------------------------------------------------------
 def add_entry_phonebook():
     surname = input("    Enter surname: ")
     name    = input("    Enter name: ")
