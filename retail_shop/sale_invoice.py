@@ -5,8 +5,8 @@ from store import Store
 class SaleInvoice(object):
 
     __last_number = 1
-    FORMAT_HEADER   = "%-15s| %8s| %10s| %12s|"
-    FORMAT_ROW      = "%-15s| %8.2f| %10.2f| %12.2f|"
+    __FORMAT_HEADER   = "%-15s| %8s| %10s| %12s|"
+    __FORMAT_ROW      = "%-15s| %8.2f| %10.2f| %12.2f|"
 
     class Record(object):
         def __init__(self, item, qty=0, price=0):
@@ -69,10 +69,10 @@ class SaleInvoice(object):
     def __str__(self):
         str = "Sale invoice #%d at %s" % (self.number, self.date_time)
         str += "\n"
-        str += SaleInvoice.FORMAT_HEADER % ( "Item", "Qty", "Price", "Sum")
+        str += SaleInvoice.__FORMAT_HEADER % ( "Item", "Qty", "Price", "Sum")
         for item in self.__records:
             str += "\n"
-            str += SaleInvoice.FORMAT_ROW % (item.name, self.__records[item].qty
+            str += SaleInvoice.__FORMAT_ROW % (item.name, self.__records[item].qty
                                              , self.__records[item].price
                                              , self.__records[item].sum)
         return str
