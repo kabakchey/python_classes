@@ -1,38 +1,17 @@
 import sys
 import os
+import csv
+
 
 # csv
 ######################################################
 def get_data_from_csv(filename):
-    import csv
 
-    f = open(filename, "r", encoding="utf8")
-
-    dict_reader = csv.DictReader(f)
-    list_dicts = []
-
-    for row in dict_reader:
-        list_dicts.append(row)
-
+    f = open(filename, "r")
+    list_dicts = [row for row in csv.DictReader(f)]
     f.close()
+
     return list_dicts
-
-
-######################################################
-def print_gender_distribution(deputies):
-    total_male = 0
-    total_female = 0
-
-    for deputy in deputies:
-        if deputy["gender"] == "1":
-            total_male += 1
-        else:
-            total_female += 1
-
-    total_deputies = total_female + total_male
-    print("Female: %d (%.2f%%), male: %d (%.2f%%)" % (
-            total_female, total_female/total_deputies*100,
-            total_male, total_male/total_deputies*100 ))
 
 
 ######################################################
