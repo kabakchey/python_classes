@@ -1,9 +1,21 @@
 import sys
+import csv
+
+
+def get_data_from_csv(filename):
+
+    f = open(filename, "r")
+    list_dicts = [row for row in csv.DictReader(f)]
+    f.close()
+
+    return list_dicts
+
 
 def delete_content(pfile):
     pfile.seek(0)
     pfile.truncate()
 
+    
 def swap_files_content(name_file1, name_file2):
     f = open(name_file1, 'r+')
     d = open(name_file2, 'r+')
@@ -23,7 +35,6 @@ def read_plus_to_file(filename):
     f = open(filename, "r+")
     buffer = f.read()
     print(buffer)
-    f.seek(0, 2) #os.SEEK_END
     f.write("Hello, Python!\n")
     f.close()
 
@@ -31,7 +42,6 @@ def append_to_file(filename):
     f = open(filename, "a+")
     buffer = f.read()
     print(buffer)
-    #f.seek(0, 2) #os.SEEK_END
     f.write("Hello, Python!\n")
     f.close()
 
@@ -51,38 +61,15 @@ def read_line_by_line(filename):
         line = f.readline()
     f.close()
     
-
     
-# csv
-######################################################
-def get_data_from_csv(filename):
-    import csv
-
-    with open(filename, "r", encoding='utf8') as f:
-        dict_reader = csv.DictReader(f)
-        list_dicts = []
-
-        for row in dict_reader:
-            list_dicts.append(row)
-
-    return list_dicts
-
-
-######################################################
-def print_gender_distribution(deputies):
-    total_male = 0
-    total_female = 0
-
-    for deputy in deputies:
-        if deputy["gender"] == "1":
-            total_male += 1
-        else:
-            total_female += 1
-
-    total_deputies = total_female + total_male
-    print("Female: %d (%.2f%%), male: %d (%.2f%%)" % (
-            total_female, total_female/total_deputies*100,
-            total_male, total_male/total_deputies*100 ))
+def read_by_chunks(filename):
+    f = open(filename, 'r+b')
+    chunk_size = 1024
+    chunk = f.read(chunk_size)
+    while len(chunk) == chunk_size:
+        # process...
+        chunk = f.read(chunk_size)
+    f.close()
 
 
 ######################################################
