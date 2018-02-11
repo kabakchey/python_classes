@@ -1,13 +1,13 @@
 ####################################################################
 class Item(object):
 
-    __total_count = 0
+    _total_count = 0
 
     # ---------------------------------------------------------------
     def __init__(self, name, purchase_price=0, sale_price=0):
 
-        Item.__total_count += 1
-        self.id = Item.__total_count
+        Item._total_count += 1
+        self.id = Item._total_count
         self.name = name
         self.purchase_price = purchase_price
         self.sale_price = sale_price

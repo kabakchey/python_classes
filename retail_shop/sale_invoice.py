@@ -4,11 +4,11 @@ from store import Store
 ###################################################################
 class SaleInvoice(object):
 
-    __last_number = 1
-    __FORMAT_HEADER   = "%-15s| %8s| %10s| %12s|"
-    __FORMAT_ROW      = "%-15s| %8.2f| %10.2f| %12.2f|"
+    _last_number = 1
+    _FORMAT_HEADER   = "%-15s| %8s| %10s| %12s|"
+    _FORMAT_ROW      = "%-15s| %8.2f| %10.2f| %12.2f|"
 
-    class Record(object):
+    class _Record(object):
         def __init__(self, item, qty=0, price=0):
             self.item = item
             self.qty = qty
@@ -18,43 +18,43 @@ class SaleInvoice(object):
     # ---------------------------------------------------------------
     def __init__(self, store):
 
-        self.number = SaleInvoice.__last_number
+        self.number = SaleInvoice._last_number
         self.date_time = datetime.datetime.now()
         self.store = store
-        self.__records = {}
+        self._records = {}
 
-        SaleInvoice.__last_number += 1
+        SaleInvoice._last_number += 1
 
     # ---------------------------------------------------------------
     def add_item(self, item, qty):
-        record = self.__records.get(item, SaleInvoice.Record(item))
+        record = self._records.get(item, SaleInvoice._Record(item))
         record.qty += qty
         record.price = item.sale_price
         record.sum   = record.qty * record.price
 
-        self.__records[item] = record
+        self._records[item] = record
 
     # ---------------------------------------------------------------
     def remove_item(self, item, qty, sale_price):
-        if item in self.__records:
-            del self.__records[item]
+        if item in self._records:
+            del self._records[item]
 
     # ---------------------------------------------------------------
     def accept(self):
         success = True
-        for item in self.__records:
-            if self.store.balance(item) < self.__records[item].qty:
+        for item in self._records:
+            if self.store.balance(item) < self._records[item].qty:
                 success = False
                 break
 
         self.__accepted = success
         if success:
-            for item in self.__records:
-                self.store.withdraw_item(item, self.__records[item].qty)
+            for item in self._records:
+                self.store.withdraw_item(item, self._records[item].qty)
         else:
             self.__accepted = False
             print("Insufficient balance for '%s'. Required: %d, actual: %d" %
-                  (item.name, self.__records[item].qty, self.store.balance(item)))
+                  (item.name, self._records[item].qty, self.store.balance(item)))
 
     # ---------------------------------------------------------------
     def cancel(self):
@@ -63,16 +63,16 @@ class SaleInvoice(object):
 
     # ---------------------------------------------------------------
     def __iter__(self):
-        return iter(self.__records.values())
+        return iter(self._records.values())
 
     # ---------------------------------------------------------------
     def __str__(self):
         str = "Sale invoice #%d at %s" % (self.number, self.date_time)
         str += "\n"
-        str += SaleInvoice.__FORMAT_HEADER % ( "Item", "Qty", "Price", "Sum")
-        for item in self.__records:
+        str += SaleInvoice._FORMAT_HEADER % ("Item", "Qty", "Price", "Sum")
+        for item in self._records:
             str += "\n"
-            str += SaleInvoice.__FORMAT_ROW % (item.name, self.__records[item].qty
-                                             , self.__records[item].price
-                                             , self.__records[item].sum)
+            str += SaleInvoice._FORMAT_ROW % (item.name, self._records[item].qty
+                                             , self._records[item].price
+                                             , self._records[item].sum)
         return str

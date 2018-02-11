@@ -56,7 +56,7 @@ def google_maps():
     # https://developers.google.com/places/web-service/get-api-key
     # https://developers.google.com/products/
 
-    api_key = os.environ.get('GOOGLE_API_KEY')
+    api_key = 'AIzaSyAsXODf_-2EJ2HnaL_IlkJGcFn3Y2bGBxM' #os.environ.get('GOOGLE_API_KEY') #
     client = googlemaps.Client(key=api_key)
 
     # current_location = {'lat': 46.60042199999999,
