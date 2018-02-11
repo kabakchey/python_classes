@@ -1,18 +1,26 @@
 import pickle
 
+
+running = True
+
+#------------------------------------------------------------------------------
 phone_book = [
               {"name": "Petr", "surname": "Petrov", "age": 50, "phone_number":"+380501234567"},
               {"name": "Ivan", "surname": "Ivanov", "age": 15, "phone_number":"+380507654321"},
              ]
 
+
+#------------------------------------------------------------------------------
 def print_entry(number, entry):
     print ("--[ %s ]--------------------------" % number)
     print ("| Surname: %20s |" % entry["surname"])
     print ("| Name:    %20s |" % entry["name"])
     print ("| Age:     %20s |" % entry["age"])
+    print ("| Phone:   %20s |" % entry["phone_number"])
     print ()
 
 
+#------------------------------------------------------------------------------
 def print_phonebook():
     print ()
     print ()
@@ -24,23 +32,35 @@ def print_phonebook():
         print_entry(number, entry)
         number += 1
 
-def print_phonebook_by_age():
-    pass
 
-def add_entry_phonebook(surname, name, age):
+#------------------------------------------------------------------------------
+def add_entry_phonebook():
+    surname = input("    Enter surname: ")
+    name    = input("    Enter name: ")
+    age     = int(input("    Enter age: "))
+    phone_number   = input("    Enter phone num.: ")
+
     entry = {}
     entry["surname"] = surname
     entry["name"] = name
     entry["age"] = age
+    entry["phone_number"] = phone_number
     phone_book.append(entry)
 
+
+#------------------------------------------------------------------------------
 def printError(message):
     print ("ERROR: %s" % message)
 
+
+#------------------------------------------------------------------------------
 def printInfo(message):
     print ("INFO: %s" % message)
 
-def find_entry_name_phonebook(name):
+
+#------------------------------------------------------------------------------
+def find_entry_name_phonebook():
+    name = str(input("    Enter name: "))
     idx = 1
     found = False
     for entry in phone_book:
@@ -52,97 +72,108 @@ def find_entry_name_phonebook(name):
         printError("Not found!!")
 
 
-def find_entry_age_phonebook(age):
+#------------------------------------------------------------------------------
+def find_entry_age_phonebook():
     pass
 
-def delete_entry_name_phonebook(name):
+
+#------------------------------------------------------------------------------
+def delete_entry_name_phonebook():
     pass
 
+
+#------------------------------------------------------------------------------
 def count_all_entries_in_phonebook():
     print ("Total number of entries: ", len(phone_book))
 
-def print_avr_age():
+
+#------------------------------------------------------------------------------
+def print_phonebook_by_age():
     pass
 
-def increase_age(number_of_years):
+
+#------------------------------------------------------------------------------
+def increase_age():
     pass
 
+
+#------------------------------------------------------------------------------
+def avr_age_of_all_persons():
+    pass
+
+
+#------------------------------------------------------------------------------
 def save_to_file():
     pickle.dump(phone_book, open("phone_book.save", "wb"))
     printInfo("Phonebook is saved into 'phone_book.save'")
 
 
+#------------------------------------------------------------------------------
 def load_from_file():
     global phone_book
     phone_book = pickle.load(open("phone_book.save", "rb"))
     printInfo("Phonebook is loaded from 'phone_book.save'")
 
 
+#------------------------------------------------------------------------------
+def exit():
+      global running
+      running = False
+
+
+#------------------------------------------------------------------------------
+def print_prompt():
+      print()
+      print()
+      print()
+      print("~ Welcome to phonebook ~")
+      print("Select one of actions below:")
+      print("     1 - Print phonebook entries")
+      print("     2 - Print phonebook entries (by age)")
+      print("     3 - Add new entry")
+      print("     4 - Find entry by name")
+      print("     5 - Find entry by age")
+      print("     6 - Delete entry by name")
+      print("     7 - The number of entries in the phonebook")
+      print("     8 - Avr. age of all persons")
+      print("     9 - Increase age by num. of years")
+      print("-----------------------------")
+      print("     s - Save to file")
+      print("     l - Load from file")
+      print("     0 - Exit")
+      print()
+
+
+#------------------------------------------------------------------------------
 def main():
-    while True:
-        user_input = ""
+
+    while running:
         try:
-            print ()
-            print ()
-            print ()
-            print ("~ Welcome to phonebook ~")
-            print ("Select one of actions below:")
-            print ("     1 - Print phonebook entries")
-            print ("     2 - Print phonebook entries (by age)")
-            print ("     3 - Add new entry")
-            print ("     4 - Find entry by name")
-            print ("     5 - Find entry by age")
-            print ("     6 - Delete entry by name")
-            print ("     7 - The number of entries in the phonebook")
-            print ("     8 - Avr. age of all persons")
-            print ("     9 - Increase age by num. of years")
-            print ("-----------------------------")
-            print ("     s - Save to file")
-            print ("     l - Load from file")
-            print ("     0 - Exit")
 
-            user_input = input("Enter you choice: ")
-            choice = int(user_input)
+            menu = {
+                  '1':  print_phonebook,
+                  '2':  print_phonebook_by_age,
+                  '3':  add_entry_phonebook,
+                  '4':  find_entry_name_phonebook,
+                  '5':  find_entry_age_phonebook,
+                  '6':  delete_entry_name_phonebook,
+                  '7':  count_all_entries_in_phonebook,
+                  '8':  avr_age_of_all_persons,
+                  '9':  increase_age,
 
-            if choice == 1:
-                print_phonebook()
-            elif choice == 2:
-                print_phonebook_by_age()
-            elif choice == 3:
-                surname = str(input("    Enter surname: "))
-                name = str(input("    Enter name: "))
-                age = int(input("    Enter age: "))
-                add_entry_phonebook(surname, name, age)
-            elif choice == 4:
-                name = str(input("    Enter name: "))
-                find_entry_name_phonebook(name)
-            elif choice == 5:
-                age = int(input("    Enter age: "))
-                find_entry_age_phonebook(age)
-            elif choice == 6:
-                name = str(input("    Enter name: "))
-                delete_entry_name_phonebook(name)
-            elif choice == 7:
-                count_all_entries_in_phonebook()
-            elif choice == 8:
-                avr_age_of_all_persons()
-            elif choice == 9:
-                nmbrs_of_years = int(raw_input("    Enter number of years to add to current ages: "))
-                increase_age(nmbrs_of_years)
-            elif choice == 0:
-                print ("Bye!")
-                break
-            else:
-                print ("Enter action within range [0..9]")
+                  '0':  exit,
+                  's':  save_to_file,
+                  'l':  load_from_file,
+            }
 
-        except ValueError:
-            if str(user_input) == 's':
-                save_to_file()
-            elif str(user_input) == 'l':
-                load_from_file()
-            else:
-                printError("Something went wrong. Try again...")
+            print_prompt()
+            user_input = input("phonebook> ")
+            menu[user_input]()
+
+        except Exception as ex:
+            printError("Something went wrong. Try again...")
 
 
+#------------------------------------------------------------------------------
 if __name__ == '__main__':
     main()
