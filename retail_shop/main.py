@@ -4,6 +4,7 @@ from invoice_journal import InvoiceJournal
 from store import Store
 from report import Report
 
+
 if __name__ == "__main__":
 
     ### items
