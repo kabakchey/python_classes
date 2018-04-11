@@ -2,13 +2,13 @@ import datetime
 from store import Store
 
 ###################################################################
-class SaleInvoice(object):
+class SaleInvoice:
 
     _last_number = 1
     _FORMAT_HEADER   = "%-15s| %8s| %10s| %12s|"
     _FORMAT_ROW      = "%-15s| %8.2f| %10.2f| %12.2f|"
 
-    class _Record(object):
+    class _Record:
         def __init__(self, item, qty=0, price=0):
             self.item = item
             self.qty = qty
