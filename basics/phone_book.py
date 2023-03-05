@@ -1,13 +1,12 @@
-import pickle
-
-
 running = True
 
 #------------------------------------------------------------------------------
+# Never use real phone/fax numbers for tests. Use 555 numbers: 
+# https://en.wikipedia.org/wiki/555_(telephone_number)
 phone_book = [
-              {"name": "Petr", "surname": "Petrov", "age": 50, "phone_number":"+380501234567"},
-              {"name": "Ivan", "surname": "Ivanov", "age": 15, "phone_number":"+380507654321"},
-             ]
+{"name": "Nazar", "surname": "Nazarenko", "age": 50, "phone_number":"+18005550102"},
+{"name": "Mariia", "surname": "Mariychuk", "age": 15, "phone_number":"+18505550112"},
+]
 
 
 #------------------------------------------------------------------------------
@@ -104,15 +103,12 @@ def avr_age_of_all_persons():
 
 #------------------------------------------------------------------------------
 def save_to_file():
-    pickle.dump(phone_book, open("phone_book.save", "wb"))
-    printInfo("Phonebook is saved into 'phone_book.save'")
+  pass
 
 
 #------------------------------------------------------------------------------
 def load_from_file():
-    global phone_book
-    phone_book = pickle.load(open("phone_book.save", "rb"))
-    printInfo("Phonebook is loaded from 'phone_book.save'")
+    pass
 
 
 #------------------------------------------------------------------------------
@@ -149,7 +145,6 @@ def main():
 
     while running:
         try:
-
             menu = {
                   '1':  print_phonebook,
                   '2':  print_phonebook_by_age,
